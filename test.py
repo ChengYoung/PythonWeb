@@ -1,6 +1,7 @@
-from flask import request
+from  flask import make_reponse
 
 @app.route('/')
 def index():
-    user_agent = request.headers.get('User-Agent')
-    return '<h1> your browser is %s </h1>  % User-Agent
+    response = make_response('<h1>this document carries a cookie</h1>')
+    response.set_cookie('answer','35')
+    return response
