@@ -2,6 +2,7 @@ from flask import Flask,render_template,session,redirect,url_for,flash
 from flask_script import Manager
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
+from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from flask_wtf import FlaskForm
 from wtforms import StringField,SubmitField
@@ -12,6 +13,9 @@ class NameForm(FlaskForm):
     submit=SubmitField('Submit')
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI']=\'sqlite:///'+os.path.join(basedir,'data.sqlite')
+app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN']=True
+db=SQLALchemy(app)
 app.config['SECRET_KEY']='hard to guess string'
 manager = Manager(app)
 bootstrap = Bootstrap(app)
