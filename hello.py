@@ -15,6 +15,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY']='hard to guess string'
 manager = Manager(app)
 bootstrap = Bootstrap(app)
+#moment = Moment(app)
 moment = Moment(app)
 
 @app.route('/',methods=['GET','POST'])
