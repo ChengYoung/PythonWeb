@@ -25,7 +25,7 @@ db = SQLAlchemy(app)
 manager = Manager(app)
 bootstrap = Bootstrap(app)
 moment = Moment(app)
-migrate = Migrate(add,db)
+migrate = Migrate(app,db)
 manager.add_command('db',MigrateCommand)
 
 class Role(db.Model):
