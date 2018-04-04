@@ -2,6 +2,7 @@ import os
 from flask import Flask
 from flask_mail import Mail
 
+#configuration
 app = Flask(__name__)
 app.config['MAIL_SERVER']='smtp.163.com'
 app.config['MAIL_PORT']=25
