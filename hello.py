@@ -29,7 +29,7 @@ app.config['MAIL_USERNAME']=os.environ.get('MAIL_USERNAME')
 app.config['MAIL_PASSWORD']=os.environ.get('MAIL_PASSWORD')
 app.config['FLASKY_ADMIN']=os.environ.get('FLASKY_ADMIN')
 app.config['FLASKY_MAIL_SUBJECT_PREFIX']='[Flasky]'
-app.config['FLASKY_MAIL_SENDER']='Flasky Admin <holmes19950506@163.com>'
+app.config['FLASKY_MAIL_SENDER']='<holmes19950506@163.com>'
 
 db = SQLAlchemy(app)
 manager = Manager(app)
